@@ -12,7 +12,7 @@
 \usepackage{amsmath, amsthm}
 \usepackage{graphicx}
 \usepackage{float}
-
+\usepackage{pgfplots}
 \usepackage[color=orange!25]{todonotes}
 \usepackage{listings}
 \newcommand{\todoinfo}[2][]{\todo[color=green!30, #1]{#2}}
@@ -249,4 +249,28 @@ def create_dicom(name_patient, date_patient, commentary_patient):
         \includegraphics[width=0.8\textwidth]{inputoutput1}
         \caption{Przykładowy wynik działania programu}
     \end{figure}
+
+    \section{Statystyki}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{rmse_detectors}
+        \caption{Wyniki miary RMSE dla różnej liczby detektorów}
+    \end{figure}
+    Zwiększenie liczby detektorów powoduje nieznaczne (z punktu widzenia czysto matematycznego) pogorszenie
+    jakości obrazu wynikowego, a to z kolei zwiększa RMSE.
+    \begin{figure}{H}
+        \centering
+        \includegraphics[width=0.8\textwidth]{mse_fan}
+        \caption{Wyniki miary RMSE dla różnej rozpiętości wachlarza kątów}
+    \end{figure}
+    Zwiększenie rozpiętości wachlarza spowoduje rozmazanie obrazu wynikowego, co z kolei zwiększa RMSE.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{mse_amount}
+        \caption{Wyniki miary RMSE dla różnej liczby skanów}
+    \end{figure}
+
+    Zwiększenie liczby skanów powoduje rozrzut przypominający stabilizujący się sygnał.
+    Na obrazku można zauważyć polepszenie jakości obrazu wynikowego.
 \end{document}
