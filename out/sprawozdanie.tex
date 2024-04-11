@@ -27,9 +27,11 @@
 \begin{document}
 \maketitle
     \section{Zastosowany model tomografu}
-    W projekcie zdecydowaliśmy się na zastosowanie modelu tomografu
+    W projekcie zdecydowaliśmy się na zastosowanie modelu tomografu stożkowego.
     \section{Zastosowany język programowania wraz z bibliotekami}
-    W projekcie użyliśmy następujących bibliotek:
+    W projekcie użyliśmy języka Python jako świetnego narzędzia do obliczeń i przetwarzania obrazów.
+    Wykorzystaliśmy
+    następujące biblioteki:
     \begin{itemize}
         \item \texttt{imageio} - do wczytywania obrazów
         \item \texttt{ipywidgets} - do tworzenia interaktywnych elementów
@@ -43,163 +45,140 @@
     \subsection{Pozyskiwanie odczytów dla poszczególnych detektorów}
     Fragment kodu:
 \begin{lstlisting}[language=Python, basicstyle=\normal, breaklines=true]
-photo = imageio.imread('SADDLE_PE.JPG', mode = 'F')
+def picture2sinogram(picture, width, detector_amount, alpha):
+    centre_of_image = [int(picture.shape[1]/2), int(picture.shape[0]/2)]
+    r = min(centre_of_image[0], centre_of_image[1])
+    print(centre_of_image)
 
-plt.figure(figsize=(16,16))
-plt.subplots_adjust(wspace=0.2)
-sub1 = plt.subplot(131)
-sub1.set_title("Obraz wejściowy")
-sub1.set_xticks([],[])
-sub1.set_yticks([],[])
-sub1.imshow(photo, cmap='gray')
+    sinogram = []
+    lines = []
+
+    # poruszaj emiterem 360/n razy o kąt alpha i zbierz próbki promieni.
+    for i in range(0, 360, alpha):
+        sinogram.append([])
+        lines.append([])
+        for detector in range(0, detector_amount):
+            x0 = r * np.cos(i * np.pi / 180)
+            y0 = r * np.sin(i * np.pi / 180)
+
+            x1 = r * np.cos((i + 180 - (width / 2) + detector * (width / (detector_amount - 1))) * np.pi / 180)
+            y1 = r * np.sin((i + 180 - (width / 2) + detector * (width / (detector_amount - 1))) * np.pi / 180)
+
+            x0 = int(x0) + np.floor(centre_of_image[1])
+            x1 = int(x1) + np.floor(centre_of_image[1])
+            y0 = int(y0) + np.floor(centre_of_image[0])
+            y1 = int(y1) + np.floor(centre_of_image[0])
+
+            line = bresenham_line(x0, y0, x1, y1)
+
+            pixel = change_brightness(picture, line)
 
 
-sinogram = radon_transform(photo, d_a, range_pi, n_detect, d_x)
-
-xlabels=[i*20 for i in range(10)]
-sub2 = plt.subplot(132)
-sub2.set_xticks(np.arange(0, 181/d_x, 20/d_x))
-sub2.set_xticklabels(xlabels)
-sub2.set_xlabel("Kąt projekcji")
-sub2.set_title("Sinogram")
-sub2.imshow(sinogram, cmap='gray')
+            sinogram[-1].append(pixel)
+            lines[-1].append([x0, y0, x1, y1])
 
 
-if filter == True:
-    sinogram2 = filtration(sinogram)
-else:
-    sinogram2 = sinogram
-constr, projection = back_projection(sinogram2, d_x)
 
-sub3 = plt.subplot(133)
-sub3.set_title("Obraz wyjściowy")
-sub3.set_xticks([],[])
-sub3.set_yticks([],[])
-sub3.imshow(constr, cmap='gray')
+    return sinogram, lines
     \end{lstlisting}
-    Na początku wczytujemy obraz wejściowy, następnie przeprowadzamy na nim transformację Radona.
-    Następnie przeprowadzamy filtrację, jeśli jest taka potrzeba.
-    Na końcu przeprowadzamy odwrotną transformację Radona.
+    Funkcja ta przeprowadza transformację Radona na obrazie wejściowym.
+    Algorytm ten pozwala jednocześnie na uśrednienie jasności punktów obrazu wynikowego, a także na jego normalizację.
+    Warto zauważyć, że funkcja ta zwraca również listę linii, które są używane do rysowania obrazu wynikowego.
     \subsection{Filtracja sinogramu i zastosowany rozmiar maski}
 \begin{lstlisting}[language=Python, basicstyle=\normal, breaklines=true]
-def filtration(sinogram):
-    h = np.array([[-1,-1,-1],[-1,9,-1],[-1,-1,-1],], dtype = 'float')
-    filter_photo = signal.convolve2d(sinogram,h)
-    filter_photo=filter_photo[2:-2,2:-2]
-    return filter_photo
+
+def filtering_sinogram(sinogram):
+    sinogram_shape = np.shape(sinogram)
+    number_of_projections = sinogram_shape[0]
+    number_of_detectors = sinogram_shape[1]
+
+    filtered = np.zeros((number_of_projections, number_of_detectors))
+    mask = do_mask(number_of_detectors)
+
+    # splot każdej projekcji z naszą maską
+    for projection in range(0, number_of_projections, 1):
+        filtered[projection] = sig.convolve(sinogram[projection], mask, mode='same', method='direct')
+
+    return filtered
+
+
+def do_mask(detectors):
+    # maska jednowymiarowa
+    mask_size = math.floor(detectors / 2)
+    mask = np.zeros(mask_size)
+    center = math.floor(mask_size / 2)
+    for i in range(0, mask_size, 1):
+        k = i - center
+        if k % 2 != 0:
+            mask[i] = (-4 / np.pi ** 2) / k ** 2
+    mask[center] = 1
+    return mask
 \end{lstlisting}
-    Maska użyta w tej funkcji to tzw.
-    maska Laplace'a, która jest często używana do wykrywania krawędzi w obrazach.
-    W naszym przypadku maska ta służy do wyostrzenia obrazu.
+    Funkcja \texttt{filtering\_sinogram} przeprowadza filtrację sinogramu.
+    Warto zauważyć, że funkcja ta wykorzystuje funkcję \texttt{do\_mask}, która zwraca maskę filtrującą.
+    Maskę wykonaliśmy dla połowy detektorów, co pozwala na zastosowanie filtracji w dziedzinie częstotliwości.
     \subsection{Ustalanie jasności poszczególnych punktów obrazu wynikowego oraz jego przetwarzanie końcowe}
 
 \begin{lstlisting}[language=Python, basicstyle=\normal, breaklines=true]
-def radon_transform(photo, d_a, range_pi, detectors_number, d_x):
-    alfa = math.pi / 2
-    n = math.ceil(180 /d_x) + 1
-    detectors = [[0,0] for _ in range(detectors_number)]
-    emiters = [[0,0] for _ in range(detectors_number)]
-    length = len(photo)
-    width = len(photo[0])
-    r = math.floor(math.sqrt(length*length+width*width)/2)
+def back_projection(picture, sinogram, lines, filtr):
+    projection = []
+    if filtr:
+        sinogram = filtering_sinogram(sinogram)
 
-    photo1 = [[0 for _ in range(r*2)] for __ in range(r*2)]
-    l, w = photo.shape
-    y_off = round((r * 2 - l)/2)
-    x_off = round((r * 2 - w)/2)
-    photo1= np.array(photo1.copy())
-    photo1[y_off:y_off+l, x_off:x_off+w] = photo
+    picture_shape = np.shape(picture)
+    width = picture_shape[0]
+    height = picture_shape[1]
 
-    sinogram=[]
 
-    for i in range(n):
-        str = [0 for _ in range(detectors_number)]
-        for j in range(detectors_number):
-            x = r * math.cos(alfa + math.pi - (1/2) * range_pi + j * (range_pi / (detectors_number - 1)) + (i * d_a))
-            y = r * math.sin(alfa + math.pi - (1/2) * range_pi + j * (range_pi / (detectors_number - 1)) + (i * d_a))
+    sinogram_shape = np.shape(sinogram)
+    number_of_projections = sinogram_shape[0]
+    number_of_detectors = sinogram_shape[1]
 
-            detectors[j] = [round(x), round(y)]
-            x_e  = r*math.cos(alfa + (1/2) * range_pi - j * (range_pi / (detectors_number - 1)) + (i * d_a))
-            y_e = r*math.sin(alfa + (1/2) * range_pi - j * (range_pi / (detectors_number - 1)) + (i * d_a))
-            emiters[j]=[round(x_e),round(y_e)]
-            points = bresenham_algorithm(emiters[j][0], emiters[j][1], detectors[j][0], detectors[j][1])
-            k =1
+    # dane do tworzenia gifa i statystyk
+    images = []
+    iterator = 0
+    # dane do rekonstrukcji zdjęcia
+    reconstructed_ = np.zeros(shape=picture_shape)
+    helper = np.zeros(shape=picture_shape)
 
-            for x_p ,y_p in points:
-                if x_off < x_p + r < x_off + w and y_off < y_p + r < y_off + l:
-                    str[j] += photo1[x_p + r - 1][y_p + r - 1]
-                    k+=1
+    # rekonstrukcja zdjęcia
+    for projection in range(0, number_of_projections, 1):
+        for detector in range(0, number_of_detectors, 1):
+            x0, y0, x1, y1 = lines[projection][detector]
+            line = bresenham_line(x0, y0, x1, y1)
+            value = sinogram[projection][detector]
+            for i in range(0, len(line), 1):
+                x, y = line[i]
+                if 0 <= x < width and 0 <= y < height:
+                    reconstructed_[int(x)][int(y)] += value
+                    helper[int(x)][int(y)] += 1
+        images.append(reconstructed_.copy())
+    return reconstructed_, images
 
-            if k > 1:
-                k -= 1
-            str[j] /= k
 
-        sinogram.append(str)
-
-    sinogram = np.rot90(sinogram, 1, axes=(0,1))
-    return sinogram
+def scale_brightness(image1):
+    return rescale_intensity(image1, out_range=(0, 1))
 \end{lstlisting}
-    Funkcja ta przeprowadza transformację Radona na obrazie wejściowym.
-    Algorytm ten pozwala jednocześnie na uśrednienie jasności punktów obrazu wynikowego, a także na jego normalizację.
+    Funkcja \texttt{back\_projection} przeprowadza odwrotną projekcję na obrazie wynikowym.
+    Warto zauważyć, że funkcja ta zwraca również listę obrazów, które są używane do stworzenia animacji. Funkcja \texttt{scale\_brightness} służy do skalowania jasności obrazu wynikowego.
+    Wykorzystywana ona jest do tworzenia statystyk.
     \subsection{Wyznaczanie wartości miary RMSE na podstawie obrazu źródłowego oraz wynikowego}\label{sec:wyznaczanie-wartosci-miary-rmse-na-podstawie-obrazu-zrodowego-oraz-wynikowego}
     \begin{lstlisting}[language=Python, basicstyle=\normal, breaklines=true]
-def calculate_mse(image1, image2):
-    return mean_squared_error(image1, image2)
-
-def analyze_mse(original_image):
-    # List to store MSE values
-    mse_values = []
-    detectors_number = 180
-
-    for i in range(1, 181):
-        radon_image = radon_transform(original_image, d_a, range_pi, detectors_number, d_x)
-        reconstructed_image = back_projection(radon_image, d_x)
-        mse = calculate_mse(original_image, reconstructed_image)
-        mse_values.append(mse)
-
-    return mse_values
-
-def analyze_mse_sampling(original_image):
-    mse_values_sampling = []
-
-    for i in range(1, 181):
-        radon_image = radon_transform(original_image, d_a * i, range_pi * i, n_detect * i, d_x)
-        reconstructed_image = back_projection(radon_image, d_x)
-        mse = calculate_mse(original_image, reconstructed_image)
-        mse_values_sampling.append(mse)
-
-    return mse_values_sampling
-
-def analyze_mse_filtering(original_image, theta):
-    mse_values_filtering = []
-
-    for i in range(1, 181):
-        radon_image = radon_transform(original_image, d_a, range_pi, n_detect, d_x)
-        reconstructed_image = back_projection(filtration(radon_image), d_x)
-        mse = calculate_mse(original_image, reconstructed_image)
-        mse_values_filtering.append(mse)
-
-    return mse_values_filtering
+sinogram_without_filter, lines_without_filter = picture2sinogram(original_image, width, detector_amount, alpha)
+constr_without_filter, _ = back_projection(original_image, sinogram_without_filter, lines_without_filter, False)
+scale_brightness(constr_without_filter)
+print(f"Mean squared error dla obrazu bez filtrowania: {math.sqrt(mean_squared_error(original_image, constr_without_filter))}")
 \end{lstlisting}
-    Funkcja \texttt{calculate\_mse} oblicza wartość miary RMSE dla dwóch obrazów.
-    Wewnątrz wykorzystujemy gotową implementację z biblioteki \texttt{skimage}: \texttt{mean\_squared\_error}.
+    Funkcja \texttt{mean\_squared\_error} zwraca wartość miary MSE dla obrazu wynikowego oraz obrazu źródłowego.
 
     \subsection{Odczyt i zapis plików DICOM}
     \begin{lstlisting}[language=Python, basicstyle=\normal, breaklines=true]
-def open_dicom(name_dcm):
-    information = pydicom.dcmread(name_dcm, force=True)
-    name_patient = information.PatientName
-    date_patient = information.StudyDate
-    commentary_patient = information.StudyDescription
-    print("Informacje")
-    print("Imie i nazwisko: ", name_patient)
-    print("Data: ", date_patient)
-    print("Komentarz: ", commentary_patient)
-    plt.imshow(information.pixel_array,cmap="gray")
+import pydicom
+import pydicom._storage_sopclass_uids
 
 def create_dicom(name_patient, date_patient, commentary_patient):
-    global constr_new
-    photo_dcm = (constr_new).astype(np.uint16)
+    global reconstructed
+    photo_dcm = (reconstructed).astype(np.uint16)
 
     meta = pydicom.Dataset()
     meta.MediaStorageSOPClassUID = pydicom._storage_sopclass_uids.MRImageStorage
@@ -241,29 +220,32 @@ def create_dicom(name_patient, date_patient, commentary_patient):
     Data.save_as("DICOM.dcm")
     \end{lstlisting}
     Funkcja \texttt{create\_dicom} tworzy plik DICOM na podstawie obrazu wynikowego.
-    Funkcja \texttt{open\_dicom} odczytuje plik DICOM i wyświetla informacje o pacjencie oraz obraz.
+    Jako parametry przyjmuje imię i nazwisko pacjenta, datę badania oraz komentarz.
 
     \subsection{Przykładowy wynik działania programu}
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{inputoutput1}
-        \caption{Przykładowy wynik działania programu}
+        \caption{Przykładowy wynik działania programu -- bez filtrowania}
     \end{figure}
 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{inputoutput2}
+        \caption{Przykładowy wynik działania programu -- z filtrowaniem}
+    \end{figure}
     \section{Statystyki}
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{rmse_detectors}
         \caption{Wyniki miary RMSE dla różnej liczby detektorów}
     \end{figure}
-    Zwiększenie liczby detektorów powoduje nieznaczne (z punktu widzenia czysto matematycznego) pogorszenie
-    jakości obrazu wynikowego, a to z kolei zwiększa RMSE.
+
     \begin{figure}{H}
         \centering
         \includegraphics[width=0.8\textwidth]{mse_fan}
         \caption{Wyniki miary RMSE dla różnej rozpiętości wachlarza kątów}
     \end{figure}
-    Zwiększenie rozpiętości wachlarza spowoduje rozmazanie obrazu wynikowego, co z kolei zwiększa RMSE.
 
     \begin{figure}[H]
         \centering
@@ -275,8 +257,9 @@ def create_dicom(name_patient, date_patient, commentary_patient):
     Na obrazku można zauważyć polepszenie jakości obrazu wynikowego.
 
     \subsection{Porównanie RMSE dla obrazu filtrowanego i niefiltrowanego}
-    Niefiltrowane: 51.64985931834606, Filtrowane: 51.64985931831507
+    Mean squared error dla obrazu bez filtrowania: 13.494372974090599
 
-    Należy pamiętać, że mimo że z punktu widzenia statystycznego i matematycznego, różnice są minimalne,
-    to dla ludzkiego oka różnica jest znacząca.
+    Mean squared error dla obrazu z filtrowaniem: 0.14701867613771755
+
+    Filtracja sinogramu pozwala na znaczne zmniejszenie błędu średniokwadratowego.
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.22)  5 APR 2024 08:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.22)  11 APR 2024 09:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -954,30 +954,30 @@ LaTeX Font Info:    Font shape `T1/fvs/m/n' will be
 LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
 (Font)              scaled to size 12.9599pt on input line 29.
 LaTeX Font Info:    Trying to load font information for TS1+fvs on input line 3
-4.
+6.
 
 (c:/texlive/2022/texmf-dist/tex/latex/bera/ts1fvs.fd
 File: ts1fvs.fd 2004/09/07 scalable font definitions for TS1/fvs.
 )
 LaTeX Font Info:    Font shape `TS1/fvs/m/n' will be
-(Font)              scaled to size 9.85492pt on input line 34.
+(Font)              scaled to size 9.85492pt on input line 36.
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
-4.
+6.
 
 (c:/texlive/2022/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 43.
+(Font)              scaled to size 10.79993pt on input line 45.
 
 (c:/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium
-/Informatyka-w-medycynie/out/sprawozdanie.tex:45: Undefined control sequence.
+/Informatyka-w-medycynie/out/sprawozdanie.tex:47: Undefined control sequence.
 \lst@basicstyle ->\normal 
                           
-l.45 ...thon, basicstyle=\normal, breaklines=true]
+l.47 ...thon, basicstyle=\normal, breaklines=true]
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -985,17 +985,74 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
+(Font)              scaled to size 9.85492pt on input line 48.
+LaTeX Font Info:    Font shape `T1/fvs/m/it' will be
+(Font)              scaled to size 9.85492pt on input line 56.
 
 C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium
-/Informatyka-w-medycynie/out/sprawozdanie.tex:51: LaTeX Error: Invalid UTF-8 by
-te sequence (臷expandafter).
+/Informatyka-w-medycynie/out/sprawozdanie.tex:56: LaTeX Error: Invalid UTF-8 by
+te sequence (腬expandafter).
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.51 sub1.set_title("Obraz wej艣ciowy")
-                                       
+l.56     # poruszaj emiterem 360/n razy o k膮t 
+                                               alpha i zbierz pr贸bki promieni.
+
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium
+/Informatyka-w-medycynie/out/sprawozdanie.tex:56: LaTeX Error: Invalid UTF-8 by
+te "85.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.56     # poruszaj emiterem 360/n razy o k膮t 
+                                               alpha i zbierz pr贸bki promieni.
+
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium
+/Informatyka-w-medycynie/out/sprawozdanie.tex:56: LaTeX Error: Invalid UTF-8 by
+te sequence (肻expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.56 ... 360/n razy o k膮t alpha i zbierz pr贸bki 
+                                                  promieni.
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium
+/Informatyka-w-medycynie/out/sprawozdanie.tex:56: LaTeX Error: Invalid UTF-8 by
+te "B3.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.56 ... 360/n razy o k膮t alpha i zbierz pr贸bki 
+                                                  promieni.
 The document does not appear to be in UTF-8 encoding.
 Try adding \UseRawInputEncoding as the first line of the file
 or specify an encoding such as \usepackage [latin1]{inputenc}
@@ -1005,119 +1062,42 @@ Alternatively, save the file in UTF-8 using your editor or another tool
 [1
 
 {c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
-(Font)              scaled to size 9.85492pt on input line 59.
-
-
-C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium
-/Informatyka-w-medycynie/out/sprawozdanie.tex:63: LaTeX Error: Invalid UTF-8 by
-te sequence (腬expandafter).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.63 sub2.set_xlabel("K膮t 
-                           projekcji")
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium
-/Informatyka-w-medycynie/out/sprawozdanie.tex:63: LaTeX Error: Invalid UTF-8 by
-te "85.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.63 sub2.set_xlabel("K膮t 
-                           projekcji")
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium
-/Informatyka-w-medycynie/out/sprawozdanie.tex:75: LaTeX Error: Invalid UTF-8 by
-te sequence (臷expandafter).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.75 sub3.set_title("Obraz wyj艣ciowy")
-                                       
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium
-/Informatyka-w-medycynie/out/sprawozdanie.tex:84: Undefined control sequence.
-\lst@basicstyle ->\normal 
-                          
-l.84 ...thon, basicstyle=\normal, breaklines=true]
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 LaTeX Info: Symbol \textminus not provided by
             font family fvs in TS1 encoding.
-            Default family used instead on input line 86.
-LaTeX Font Info:    Trying to load font information for T1+cmss on input line 8
-6.
+            Default family used instead on input line 64.
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 6
+4.
+
 (c:/texlive/2022/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-86.
+64.
 
 (c:/texlive/2022/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Info: Symbol \textminus not provided by
             font family fvs in TS1 encoding.
-            Default family used instead on input line 86.
+            Default family used instead on input line 64.
 LaTeX Info: Symbol \textminus not provided by
             font family fvs in TS1 encoding.
-            Default family used instead on input line 86.
+            Default family used instead on input line 65.
 LaTeX Info: Symbol \textminus not provided by
             font family fvs in TS1 encoding.
-            Default family used instead on input line 86.
+            Default family used instead on input line 65.
 LaTeX Info: Symbol \textminus not provided by
             font family fvs in TS1 encoding.
-            Default family used instead on input line 86.
+            Default family used instead on input line 77.
 LaTeX Info: Symbol \textminus not provided by
             font family fvs in TS1 encoding.
-            Default family used instead on input line 86.
-LaTeX Info: Symbol \textminus not provided by
-            font family fvs in TS1 encoding.
-            Default family used instead on input line 86.
-LaTeX Info: Symbol \textminus not provided by
-            font family fvs in TS1 encoding.
-            Default family used instead on input line 86.
-LaTeX Info: Symbol \textminus not provided by
-            font family fvs in TS1 encoding.
-            Default family used instead on input line 88.
-LaTeX Info: Symbol \textminus not provided by
-            font family fvs in TS1 encoding.
-            Default family used instead on input line 88.
+            Default family used instead on input line 78.
 
 C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium
-/Informatyka-w-medycynie/out/sprawozdanie.tex:96: Undefined control sequence.
+/Informatyka-w-medycynie/out/sprawozdanie.tex:88: Undefined control sequence.
 \lst@basicstyle ->\normal 
                           
-l.96 ...thon, basicstyle=\normal, breaklines=true]
+l.88 ...thon, basicstyle=\normal, breaklines=true]
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1125,52 +1105,121 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-LaTeX Info: Symbol \textminus not provided by
-            font family fvs in TS1 encoding.
-            Default family used instead on input line 108.
-LaTeX Info: Symbol \textminus not provided by
-            font family fvs in TS1 encoding.
-            Default family used instead on input line 109.
+
+C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium
+/Informatyka-w-medycynie/out/sprawozdanie.tex:98: LaTeX Error: Invalid UTF-8 by
+te sequence (臷expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.98     # splot ka偶dej 
+                         projekcji z nasz膮 mask膮
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium
+/Informatyka-w-medycynie/out/sprawozdanie.tex:98: LaTeX Error: Invalid UTF-8 by
+te "BC.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.98     # splot ka偶dej 
+                         projekcji z nasz膮 mask膮
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium
+/Informatyka-w-medycynie/out/sprawozdanie.tex:98: LaTeX Error: Invalid UTF-8 by
+te sequence (腬expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.98     # splot ka偶dej projekcji z nasz膮 
+                                            mask膮
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium
+/Informatyka-w-medycynie/out/sprawozdanie.tex:98: LaTeX Error: Invalid UTF-8 by
+te "85.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.98     # splot ka偶dej projekcji z nasz膮 
+                                            mask膮
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium
+/Informatyka-w-medycynie/out/sprawozdanie.tex:98: LaTeX Error: Invalid UTF-8 by
+te sequence (腬expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.98     # splot ka偶dej projekcji z nasz膮 mask膮
+                                                  
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium
+/Informatyka-w-medycynie/out/sprawozdanie.tex:98: LaTeX Error: Invalid UTF-8 by
+te "85.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.98     # splot ka偶dej projekcji z nasz膮 mask膮
+                                                  
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
 [2]
 LaTeX Info: Symbol \textminus not provided by
             font family fvs in TS1 encoding.
-            Default family used instead on input line 118.
+            Default family used instead on input line 111.
 LaTeX Info: Symbol \textminus not provided by
             font family fvs in TS1 encoding.
-            Default family used instead on input line 118.
-LaTeX Info: Symbol \textminus not provided by
-            font family fvs in TS1 encoding.
-            Default family used instead on input line 119.
-LaTeX Info: Symbol \textminus not provided by
-            font family fvs in TS1 encoding.
-            Default family used instead on input line 119.
-LaTeX Info: Symbol \textminus not provided by
-            font family fvs in TS1 encoding.
-            Default family used instead on input line 122.
-LaTeX Info: Symbol \textminus not provided by
-            font family fvs in TS1 encoding.
-            Default family used instead on input line 122.
-LaTeX Info: Symbol \textminus not provided by
-            font family fvs in TS1 encoding.
-            Default family used instead on input line 123.
-LaTeX Info: Symbol \textminus not provided by
-            font family fvs in TS1 encoding.
-            Default family used instead on input line 123.
-LaTeX Info: Symbol \textminus not provided by
-            font family fvs in TS1 encoding.
-            Default family used instead on input line 130.
-LaTeX Info: Symbol \textminus not provided by
-            font family fvs in TS1 encoding.
-            Default family used instead on input line 130.
-LaTeX Info: Symbol \textminus not provided by
-            font family fvs in TS1 encoding.
-            Default family used instead on input line 134.
+            Default family used instead on input line 113.
 
 C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium
-/Informatyka-w-medycynie/out/sprawozdanie.tex:145: Undefined control sequence.
+/Informatyka-w-medycynie/out/sprawozdanie.tex:122: Undefined control sequence.
 \lst@basicstyle ->\normal 
                           
-l.145 ...hon, basicstyle=\normal, breaklines=true]
+l.122 ...hon, basicstyle=\normal, breaklines=true]
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1178,14 +1227,58 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-LaTeX Font Info:    Font shape `T1/fvs/m/it' will be
-(Font)              scaled to size 9.85492pt on input line 150.
+
+C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium
+/Informatyka-w-medycynie/out/sprawozdanie.tex:140: LaTeX Error: Invalid UTF-8 b
+yte sequence (腬expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.140     # dane do rekonstrukcji zdj臋cia
+                                          
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium
+/Informatyka-w-medycynie/out/sprawozdanie.tex:144: LaTeX Error: Invalid UTF-8 b
+yte sequence (腬expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.144     # rekonstrukcja zdj臋cia
+                                  
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
 [3]
 C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium
-/Informatyka-w-medycynie/out/sprawozdanie.tex:188: Undefined control sequence.
+/Informatyka-w-medycynie/out/sprawozdanie.tex:166: Undefined control sequence.
 \lst@basicstyle ->\normal 
                           
-l.188 ...hon, basicstyle=\normal, breaklines=true]
+l.166 ...hon, basicstyle=\normal, breaklines=true]
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium
+/Informatyka-w-medycynie/out/sprawozdanie.tex:175: Undefined control sequence.
+\lst@basicstyle ->\normal 
+                          
+l.175 ...hon, basicstyle=\normal, breaklines=true]
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1196,62 +1289,69 @@ and I'll forget about whatever was undefined.
 [4]
 LaTeX Info: Symbol \textminus not provided by
             font family fvs in TS1 encoding.
-            Default family used instead on input line 231.
-
-Overfull \hbox (13.44136pt too wide) in paragraph at lines 243--245
-\T1/fvs/m/n/10.95 Funkcja \T1/cmtt/m/n/10.95 create_dicom \T1/fvs/m/n/10.95 two
--rzy plik DI-COM na pod-sta-wie ob-ra-zu wy-ni-ko-we-go. Funk-cja \T1/cmtt/m/n/
-10.95 open_dicom
- []
-
-<inputoutput1.png, id=210, 910.602pt x 324.4923pt>
+            Default family used instead on input line 210.
+<inputoutput1.png, id=208, 276.0714pt x 302.0886pt>
 File: inputoutput1.png Graphic file (type png)
 <use inputoutput1.png>
-Package pdftex.def Info: inputoutput1.png  used on input line 249.
-(pdftex.def)             Requested size: 362.37569pt x 129.13113pt.
-[5]
-<rmse_detectors.png, id=258, 596.9502pt x 320.1561pt>
-File: rmse_detectors.png Graphic file (type png)
-<use rmse_detectors.png>
-Package pdftex.def Info: rmse_detectors.png  used on input line 256.
-(pdftex.def)             Requested size: 362.37569pt x 194.35208pt.
-<mse_fan.png, id=259, 596.9502pt x 320.1561pt>
-File: mse_fan.png Graphic file (type png)
-<use mse_fan.png>
-Package pdftex.def Info: mse_fan.png  used on input line 263.
-(pdftex.def)             Requested size: 362.37569pt x 194.35208pt.
-<mse_amount.png, id=260, 596.9502pt x 320.1561pt>
-File: mse_amount.png Graphic file (type png)
-<use mse_amount.png>
-Package pdftex.def Info: mse_amount.png  used on input line 270.
-(pdftex.def)             Requested size: 362.37569pt x 194.35208pt.
+Package pdftex.def Info: inputoutput1.png  used on input line 228.
+(pdftex.def)             Requested size: 362.37569pt x 396.53638pt.
+ [5]
+<inputoutput2.png, id=235, 276.0714pt x 302.0886pt>
+File: inputoutput2.png Graphic file (type png)
+<use inputoutput2.png>
+Package pdftex.def Info: inputoutput2.png  used on input line 234.
+(pdftex.def)             Requested size: 362.37569pt x 396.53638pt.
  [6
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.273 
-      
+l.237     \section
+                  {Statystyki} <C:/Users/Acer/Documents/studia/semestr 6/Inform
+atyka w medycynie - laboratorium/Informatyka-w-medycynie/out/inputoutput1.png>]
+<rmse_detectors.png, id=242, 596.9502pt x 320.1561pt>
+File: rmse_detectors.png Graphic file (type png)
+<use rmse_detectors.png>
+Package pdftex.def Info: rmse_detectors.png  used on input line 240.
+(pdftex.def)             Requested size: 362.37569pt x 194.35208pt.
+<mse_fan.png, id=243, 596.9502pt x 320.1561pt>
+File: mse_fan.png Graphic file (type png)
+<use mse_fan.png>
+Package pdftex.def Info: mse_fan.png  used on input line 246.
+(pdftex.def)             Requested size: 362.37569pt x 194.35208pt.
+[7
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.273 
-       <C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - labo
-ratorium/Informatyka-w-medycynie/out/inputoutput1.png> <C:/Users/Acer/Documents
-/studia/semestr 6/Informatyka w medycynie - laboratorium/Informatyka-w-medycyni
-e/out/rmse_detectors.png>] [7
+l.248     \end{figure}
+                      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.282 \end{document}
-                    
+l.248     \end{figure}
+                       <C:/Users/Acer/Documents/studia/semestr 6/Informatyka w 
+medycynie - laboratorium/Informatyka-w-medycynie/out/inputoutput2.png> <C:/User
+s/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium/Inform
+atyka-w-medycynie/out/rmse_detectors.png>]
+<mse_amount.png, id=253, 596.9502pt x 320.1561pt>
+File: mse_amount.png Graphic file (type png)
+<use mse_amount.png>
+Package pdftex.def Info: mse_amount.png  used on input line 252.
+(pdftex.def)             Requested size: 362.37569pt x 194.35208pt.
+ [8
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.282 \end{document}
+l.265 \end{document}
+                    
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.265 \end{document}
                      <C:/Users/Acer/Documents/studia/semestr 6/Informatyka w me
 dycynie - laboratorium/Informatyka-w-medycynie/out/mse_fan.png> <C:/Users/Acer/
 Documents/studia/semestr 6/Informatyka w medycynie - laboratorium/Informatyka-w
@@ -1262,13 +1362,13 @@ Package rerunfilecheck Info: File `sprawozdanie.out' has not changed.
 (rerunfilecheck)             Checksum: 7CC0E61CE42B387BFE6582D1FFB7E641;3302.
  ) 
 Here is how much of TeX's memory you used:
- 33601 strings out of 477678
- 768576 string characters out of 5833467
- 1565432 words of memory out of 5000000
- 51640 multiletter control sequences out of 15000+600000
+ 33558 strings out of 477678
+ 768139 string characters out of 5833467
+ 1521524 words of memory out of 5000000
+ 51618 multiletter control sequences out of 15000+600000
  513917 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,7n,103p,747b,2131s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,6n,103p,747b,2129s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{c:/tex
 live/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texlive/2022/
 texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2022/texmf-dist/fonts/type1/
@@ -1277,11 +1377,11 @@ public/bera/fvsb8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/bera/fvsr
 ive/2022/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb><c:/texlive/2022/t
 exmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
 Output written on "C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medyc
-ynie - laboratorium/Informatyka-w-medycynie/out/sprawozdanie.pdf" (7 pages, 415
-823 bytes).
+ynie - laboratorium/Informatyka-w-medycynie/out/sprawozdanie.pdf" (8 pages, 242
+723 bytes).
 PDF statistics:
- 348 PDF objects out of 1000 (max. 8388607)
- 317 compressed objects within 4 object streams
- 200 named destinations out of 1000 (max. 500000)
- 121 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 326 PDF objects out of 1000 (max. 8388607)
+ 293 compressed objects within 3 object streams
+ 179 named destinations out of 1000 (max. 500000)
+ 126 words of extra memory for PDF output out of 10000 (max. 10000000)
 
