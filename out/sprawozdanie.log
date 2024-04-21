@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.22)  17 APR 2024 20:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.22)  21 APR 2024 19:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1309,11 +1309,11 @@ s been already used, duplicate ignored
 l.237     \section
                   {Statystyki} <C:/Users/Acer/Documents/studia/semestr 6/Inform
 atyka w medycynie - laboratorium/Informatyka-w-medycynie/out/inputoutput1.png>]
-<rmse_detectors.png, id=242, 594.0594pt x 309.3156pt>
+<rmse_detectors.png, id=242, 616.4631pt x 309.3156pt>
 File: rmse_detectors.png Graphic file (type png)
 <use rmse_detectors.png>
 Package pdftex.def Info: rmse_detectors.png  used on input line 240.
-(pdftex.def)             Requested size: 362.37569pt x 188.68695pt.
+(pdftex.def)             Requested size: 362.37569pt x 181.82913pt.
 <mse_fan.png, id=243, 616.4631pt x 309.3156pt>
 File: mse_fan.png Graphic file (type png)
 <use mse_fan.png>
@@ -1376,8 +1376,8 @@ public/bera/fvsb8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/bera/fvsr
 ive/2022/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb><c:/texlive/2022/t
 exmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
 Output written on "C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medyc
-ynie - laboratorium/Informatyka-w-medycynie/out/sprawozdanie.pdf" (8 pages, 238
-130 bytes).
+ynie - laboratorium/Informatyka-w-medycynie/out/sprawozdanie.pdf" (8 pages, 244
+356 bytes).
 PDF statistics:
  326 PDF objects out of 1000 (max. 8388607)
  293 compressed objects within 3 object streams
