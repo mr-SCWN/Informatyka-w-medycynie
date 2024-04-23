@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.22)  11 APR 2024 09:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.22)  21 APR 2024 19:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1309,53 +1309,52 @@ s been already used, duplicate ignored
 l.237     \section
                   {Statystyki} <C:/Users/Acer/Documents/studia/semestr 6/Inform
 atyka w medycynie - laboratorium/Informatyka-w-medycynie/out/inputoutput1.png>]
-<rmse_detectors.png, id=242, 596.9502pt x 320.1561pt>
+<rmse_detectors.png, id=242, 616.4631pt x 309.3156pt>
 File: rmse_detectors.png Graphic file (type png)
 <use rmse_detectors.png>
 Package pdftex.def Info: rmse_detectors.png  used on input line 240.
-(pdftex.def)             Requested size: 362.37569pt x 194.35208pt.
-<mse_fan.png, id=243, 596.9502pt x 320.1561pt>
+(pdftex.def)             Requested size: 362.37569pt x 181.82913pt.
+<mse_fan.png, id=243, 616.4631pt x 309.3156pt>
 File: mse_fan.png Graphic file (type png)
 <use mse_fan.png>
 Package pdftex.def Info: mse_fan.png  used on input line 246.
-(pdftex.def)             Requested size: 362.37569pt x 194.35208pt.
+(pdftex.def)             Requested size: 362.37569pt x 181.82913pt.
+<inputoutput3.png, id=244, 609.9588pt x 309.3156pt>
+File: inputoutput3.png Graphic file (type png)
+<use inputoutput3.png>
+Package pdftex.def Info: inputoutput3.png  used on input line 252.
+(pdftex.def)             Requested size: 362.37569pt x 183.76895pt.
 [7
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.248     \end{figure}
-                      
+l.255 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.248     \end{figure}
-                       <C:/Users/Acer/Documents/studia/semestr 6/Informatyka w 
-medycynie - laboratorium/Informatyka-w-medycynie/out/inputoutput2.png> <C:/User
-s/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratorium/Inform
-atyka-w-medycynie/out/rmse_detectors.png>]
-<mse_amount.png, id=253, 596.9502pt x 320.1561pt>
-File: mse_amount.png Graphic file (type png)
-<use mse_amount.png>
-Package pdftex.def Info: mse_amount.png  used on input line 252.
-(pdftex.def)             Requested size: 362.37569pt x 194.35208pt.
- [8
+l.255 
+       <C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - labo
+ratorium/Informatyka-w-medycynie/out/inputoutput2.png> <C:/Users/Acer/Documents
+/studia/semestr 6/Informatyka w medycynie - laboratorium/Informatyka-w-medycyni
+e/out/rmse_detectors.png>] [8
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.265 \end{document}
+l.262 \end{document}
                     
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.265 \end{document}
+l.262 \end{document}
                      <C:/Users/Acer/Documents/studia/semestr 6/Informatyka w me
 dycynie - laboratorium/Informatyka-w-medycynie/out/mse_fan.png> <C:/Users/Acer/
 Documents/studia/semestr 6/Informatyka w medycynie - laboratorium/Informatyka-w
--medycynie/out/mse_amount.png>]
+-medycynie/out/inputoutput3.png>]
 (C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medycynie - laboratoriu
 m/Informatyka-w-medycynie/out/sprawozdanie.aux)
 Package rerunfilecheck Info: File `sprawozdanie.out' has not changed.
@@ -1363,7 +1362,7 @@ Package rerunfilecheck Info: File `sprawozdanie.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  33558 strings out of 477678
- 768139 string characters out of 5833467
+ 768159 string characters out of 5833467
  1521524 words of memory out of 5000000
  51618 multiletter control sequences out of 15000+600000
  513917 words of font info for 61 fonts, out of 8000000 for 9000
@@ -1377,8 +1376,8 @@ public/bera/fvsb8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/bera/fvsr
 ive/2022/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb><c:/texlive/2022/t
 exmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
 Output written on "C:/Users/Acer/Documents/studia/semestr 6/Informatyka w medyc
-ynie - laboratorium/Informatyka-w-medycynie/out/sprawozdanie.pdf" (8 pages, 242
-723 bytes).
+ynie - laboratorium/Informatyka-w-medycynie/out/sprawozdanie.pdf" (8 pages, 244
+356 bytes).
 PDF statistics:
  326 PDF objects out of 1000 (max. 8388607)
  293 compressed objects within 3 object streams
